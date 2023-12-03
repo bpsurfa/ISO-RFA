@@ -1,7 +1,13 @@
 *{
     margin: 0;
     padding: 0;
-    
+
+     -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 html{
@@ -16,6 +22,7 @@ a{
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color:rgb(240, 235, 232) ;
+    overflow-x: hidden !important;
 }
 
 :root { 
@@ -39,11 +46,60 @@ body{
   border-radius: 5px;
 }
 
+* {
+  margin:0;
+  padding:0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.to-top {
+  background: white;
+  position: fixed;
+  bottom: 16px;
+  right:32px;
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color:#1f1f1f;
+  text-decoration: none;
+  opacity:0;
+  pointer-events: none;
+  transition: all .4s;
+
+  font-size: 2rem;
+  font-weight: bold;
+
+  text-align: center;
+  border: rgb(138, 98, 98) 2px solid;
+  background-color: rgba(255, 247, 240, 1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+a svg{
+  width: 50%;
+  height: 50%;
+  color: rgb(100, 0, 0);
+}
+
+.to-top.active {
+  bottom:32px;
+  pointer-events: auto;
+  opacity:1;
+  z-index: 5;
+}
+
 .background1 {
   position: absolute;
   opacity: 0.13;
   top: -200px;
-
   width: 1485px;
   z-index: -100;
 }
@@ -54,35 +110,101 @@ header{
     padding-left: 80px;
     padding-right: 80px;
     align-items:center;
-
     width: 1425px;
     margin: auto;
+}
+
+header svg{
+  z-index: 999;
+  margin-right: 10%;
+  color: rgb(44, 41, 41);
+  display: none;
+}
+
+.sidebar{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 60%;
+  z-index: 999;
+  color: rgb(44, 41, 41);
+  box-shadow: -10px 0 10px rgba(0,0,0, 0.1);
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: rgba(0, 0, 0, 0.1) -2px 1px 3px, rgba(0, 0, 0, 0.2) -1px 1px 2px;
+}
+
+header svg:hover{
+  color: rgb(241, 234, 234);
+  cursor: pointer;
+}
+
+.sidebar a{
+  width: 100%;
+
+  font-size: 1rem;
+  font-family: "Poppins";
+ 
+  padding: 12px;
+  padding-left: 25px;
+  color: rgb(71, 57, 57);
+  text-decoration: none;
+}
+
+.sidebar div{
+  width: 75%;
+  height: 1px;
+  background-color: rgba(95, 76, 76, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+
+.sidebar svg{
+  padding: 12px;
+  padding-left: 25px;
+}
+
+.sidebar a:hover{
+  background-color: rgba(0, 0, 0, .1);
 }
 
 .header-gradient{
   position: absolute;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0,0,0, .1);
   height: 75px;
-  z-index: -1;
+  z-index: 0;
+  backdrop-filter: blur(8px);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
 }
 
 .home{
-    font-size: 1.3rem;
-    font-family: "Libre Baskerville", serif;
-    font-weight: 1000;
+    font-size: 1.4rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
 
-
+    z-index: 1;
     height: 75px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+  
 }
 
 .home a{
     text-decoration: none;
-    color: #313131;
+    color: rgb(53, 48, 48);
+    
 }
 
 .rfa{
@@ -90,7 +212,7 @@ header{
 }
 
 .home span{
-  color: rgb(185, 0, 0);
+  color: rgb(117, 0, 0);
 }
 
 nav ul{
@@ -119,7 +241,7 @@ nav a{
     font-family: "Poppins";
     font-weight: 1000;
 
-    color: rgb(65, 65, 65);
+    color: rgb(71, 57, 57);
     text-decoration: none;
 }
 
@@ -150,7 +272,6 @@ nav ul li:nth-child(1){
 }
 
 .landing{
-
   height: 92vh;
   min-height: 500px;
   width: 1425px;
@@ -164,10 +285,10 @@ nav ul li:nth-child(1){
 
 .bpsubg{
   position: absolute;
-  width: 100%;
+  min-width: 100vw;
+  filter: brightness(65%);
   height: 100%;
-  top: -15%;
-  opacity: .45;
+  opacity: .3;
   z-index: -1;
   -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
       mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
@@ -187,11 +308,12 @@ nav ul li:nth-child(1){
 .landing-context span {
   color: rgb(160, 0, 0);
   line-height: 45px;
+  
 }
 
 .landing-context h3{
   margin-top: 50px;
-  
+  line-height: 200%;
   font-family: 'Oswald', sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
@@ -316,6 +438,7 @@ nav ul li:nth-child(1){
   }
   
   .card-main-pic {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -333,12 +456,11 @@ nav ul li:nth-child(1){
   }
   
   .card h2 {
-
     position: relative;
     margin: 5% 0 0 5%;
     font-family: "Zilla Slab Highlight";
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     color: rgb(177, 85, 85);
    
     line-height: 45px;
@@ -355,16 +477,14 @@ nav ul li:nth-child(1){
   }
   
   .card p {
+    text-align: justify;
     margin: 7% 5% 0 5%;
     font-family: "Poppins";
     font-weight: 400;
     color: #6e6e6e;
     font-size: 1rem;
-    line-height: 1.65;
-    
-
+    line-height: 1.85;
   }
-
 
   .step1::after{
     position: absolute;
@@ -467,10 +587,10 @@ nav ul li:nth-child(1){
 
   footer {
     position: relative;
-    margin-top: 300px;
+    margin-top: 15%;
   
     width: 100%;
-    min-height: 420px;
+    min-height: 325px;
   
     display: flex;
     justify-content: center;
@@ -479,17 +599,21 @@ nav ul li:nth-child(1){
     background-color: rgb(44, 44, 44);
     background-image: url("../pictures/18.png");
     background-size: contain;
-    z-index: 1000;
+    z-index: 2;
+    overflow-x: hidden;
   }
-  
 
-  
+  .projects .background1{
+    opacity: .17;
+    max-width: 90%;
+  }
+   
   .footer-wrapper {
     position: relative;
-    top: 25px;
     display: flex;
+
     width: 100%;
-    margin-left: 20%;
+    padding: 0% 10% 0% 10%;
   }
   
   .footer-wrapper h2 {
@@ -521,6 +645,13 @@ nav ul li:nth-child(1){
     position: relative;
     display: flex;
     flex-direction: column;
+    left: 15%;
+  }
+
+  .contacts li:last-child img{
+    width: 12px;
+    top: 0;
+    margin-right: 15px;
   }
   
   .about p,
@@ -618,23 +749,35 @@ nav ul li:nth-child(1){
 
   }
 
-  @media all and (max-width: 700px){
-    /*.step1 .projects-context{
-      margin-top: 25px;
-    }
-
-    .step1 .projects-context span:first-child{
-      content: "\a";
-      white-space: pre;
-      display: block;
-    }
-
-    .step1 .projects-context span:nth-child(2){
+  @media all and (max-width: 1024px){
+    .home > :nth-child(2){
       display: none;
-    } */
+    }
 
-    .step1 .projects-context h2, .step2 .projects-context h2, .step3 .projects-context h2{
-      font-size: 3rem !important;
+    .home > :nth-child(3){
+      display: inline-block!important;
+    }
+
+    .landing-context h1{
+       font-size: 2.2rem !important;
+  
+    }
+
+    .landing-context h3{
+      font-size: 1.2rem !important;
+    }
+
+    .logos{
+      width: 200px !important;
+    }
+
+    nav a{
+      padding: 0 15;
+      font-size: .9rem;
+    }
+
+    .projects::after{
+      left: 47%;
     }
   }
   
@@ -685,33 +828,157 @@ nav ul li:nth-child(1){
     .logos{
       display: none;
     }
+
+    .projects::after{
+      left: 46%;
+    }
+
+    .footer-wrapper{
+      flex-direction: column;
+      padding: 10% 0 10% 0;
+
+    }
+
+    .about{
+      margin-bottom: 15%;
+    }
+
+    .about p{
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    .contacts ul{
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+    }
+
+    .about, .contacts{
+      text-align: center;
+      align-items: center;
+      left: 0;
+    }
   }
 
-  @media all and (max-width: 1024px){
-    .home > :nth-child(2){
+  @media all and (max-width: 700px){
+    .step1 .projects-context h2, .step2 .projects-context h2, .step3 .projects-context h2{
+      font-size: 3rem;
+    }
+
+    nav{
       display: none;
     }
 
-    .home > :nth-child(3){
-      display: inline-block!important;
+    header svg{
+      display: inline-block;
+    }
+  }
+
+  @media all and (max-width: 600px){
+    /*.step1 .projects-context{
+      margin-top: 25px;
     }
 
-    .landing-context h1{
-       font-size: 2.2rem !important;
+    .step1 .projects-context span:first-child{
+      content: "\a";
+      white-space: pre;
+      display: block;
+    }
+
+    .step1 .projects-context span:nth-child(2){
+      display: none;
+    } */
+
+    .step1 .projects-context h2, .step2 .projects-context h2, .step3 .projects-context h2{
+      font-size: 2.5rem;
+    }
+
+    .projects::after{
+      left: 45.5%;
+    }
+  }
+
   
+  @media all and (max-width: 500px){
+    .landing-context{
+      text-align: center;
+      padding-right: 0;
     }
 
     .landing-context h3{
-      font-size: 1.2rem !important;
+      text-align: center;
+      margin-top: 10% !important;
+      padding-left: 2%;
+      padding-right: 2%;
     }
 
-    .logos{
-      width: 200px !important;
+    .projects::after{
+      width: 9vw;
+      font-size: 5.7vw;
+      top: -16vw !important;
+      left: 45%;
     }
 
-    nav a{
-      padding: 0 15;
-      font-size: .9rem;
+    .to-top{
+      scale: 1;
+      width: 50px;
+      height: 50px;
+      right: 5% !important;
+    }
+
+    .projects-context{
+      scale: 1;
+      min-height: 50vw !important;
+    }
+
+    .projects-context h2{
+      font-size: 8vw !important;
+    }
+
+    .projects-context p{
+      font-size: 3.3vw !important;
+    }
+
+    .card{
+      width: 90vw;
+      height: 117.8vw;
+    }
+
+    .card > div, card > a{
+      height: 35vw;
+    }
+
+    .card h2{
+      font-size: 5.5vw;
+      line-height: 9vw;
+    }
+
+    .card p{
+      font-size: 3.3vw;
+      line-height: 200%;
+      text-align: justify;
+    }
+
+    .card-main-pic img{
+      height: 36vw;
+    }
+  }
+
+  @media all and (max-width: 415px){
+    .landing-context{
+
+      width: 100vw !important;
+     
+    }
+
+    .landing-context h1{
+      font-size: 8.5vw !important;
+    }
+
+    .landing-context h3{
+      font-size: 4.5vw !important;
     }
   }
 
@@ -754,6 +1021,16 @@ nav ul li:nth-child(1){
 
     .step1 .projects-cards, .step2 .projects-cards, .step3 .projects-cards {
       row-gap: 0px !important;
+    }
+
+    .to-top{
+      scale: .9;
+    
+      right: 3%;
+    }
+
+    .to-top.active{
+      bottom: 3%;
     }
   }
 
@@ -818,11 +1095,6 @@ nav ul li:nth-child(1){
     .landing-context h1{
       font-size: 2.7rem;
     }
-
-    
   }
 
-  @media all and (max-height: 720px){
-    
-  }
 
