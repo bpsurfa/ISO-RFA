@@ -12,11 +12,12 @@
 
 html{
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  height: -webkit-fill-available;
 }
 
 a{
     text-decoration: none;
+    height: -webkit-fill-available;
 }
 
 body{
@@ -137,8 +138,7 @@ header svg{
   justify-content: flex-start;
 
   background-color: rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(50 px);
   box-shadow: rgba(0, 0, 0, 0.1) -2px 1px 3px, rgba(0, 0, 0, 0.2) -1px 1px 2px;
 }
 
@@ -184,8 +184,7 @@ header svg:hover{
   background-color: rgba(0,0,0, .1);
   height: 75px;
   z-index: 0;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(50px);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
 }
 
@@ -285,18 +284,9 @@ nav ul li:nth-child(1){
   align-items: center;
 }
 
-.bpsubgwrapper{
-  position: absolute;
-
-  overflow: hidden !important;
-  width: 100%;
-  height: 100%;
-}
-
 .bpsubg{
   position: absolute;
-  width: 100%;
-  min-width: 100vh;
+  min-width: 100vw;
   filter: brightness(65%);
   height: 100%;
   opacity: .3;
@@ -1108,10 +1098,4 @@ nav ul li:nth-child(1){
     }
   }
 
-  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-    .ios.sidebar, .ios.header-gradient{
-        -webkit-backdrop-filter: blur(15px);
-        backdrop-filter: blur(15px);
-    }
-  }
 
