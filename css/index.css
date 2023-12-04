@@ -12,12 +12,10 @@
 
 html{
   scroll-behavior: smooth;
-  height: -webkit-fill-available;
 }
 
 a{
     text-decoration: none;
-    height: -webkit-fill-available;
 }
 
 body{
