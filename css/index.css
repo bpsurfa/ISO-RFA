@@ -745,7 +745,7 @@ nav ul li:nth-child(1){
     }
   
     .projects{
-      width: 100dvw;
+      width: 100%;
       border-radius: 0;
     
     }
@@ -985,7 +985,7 @@ nav ul li:nth-child(1){
     }
 
     .landing-context h1{
-      font-size: 8.5dvw !important;
+      font-size: 8.5vw !important;
     }
 
     .landing-context h3{
