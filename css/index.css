@@ -387,6 +387,8 @@ nav ul li:nth-child(1){
   .step1{
     margin-top: 150px;
   }
+
+
   
   .projects-context {
 
@@ -398,7 +400,6 @@ nav ul li:nth-child(1){
   
     justify-content: center;
     align-items: center;
-
   }
   
   .projects-context > h2 {
@@ -432,17 +433,24 @@ nav ul li:nth-child(1){
   }
   
   .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 400px;
     height: 580px;
     background-color: rgb(250, 250, 250);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     transition: all 0.5s ease;
+    border-radius: 2%;
   }
   
   .card:hover{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 40px 0px;
+    box-shadow: rgba(240, 46, 95, 0.4) 0px 5px, 
+    rgba(240, 46, 95, 0.3) 0px 10px,
+     rgba(240, 46, 95, 0.2) 0px 15px, 
+     rgba(240, 46, 170, 0.1) 0px 20px,
+      rgba(240, 46, 170, 0.05) 0px 25px;
+      scale: 102%;
   }
   
   .card > div {
@@ -450,14 +458,17 @@ nav ul li:nth-child(1){
     overflow: hidden;
     width: 100%;
     height: 175px;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
   }
   
   .bg {
     position: absolute;
     width: 500px;
     top: -200px;
-    opacity: 0.8;
+    opacity: .9;
     transform: rotate(90deg);
+ 
   }
   
   .card-main-pic {
@@ -507,6 +518,47 @@ nav ul li:nth-child(1){
     color: #6e6e6e;
     font-size: 1rem;
     line-height: 1.85;
+  }
+
+  .notice{
+    position: absolute;
+    background-image: linear-gradient(rgb(248, 244, 242), rgba(255, 182, 182, 0.93));
+ 
+    opacity: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #666666;
+    line-height: 300%;
+    letter-spacing: 2px;
+  }
+
+  .notice span:last-child{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(122, 0, 0);
+  }
+
+  .notice:hover{
+    opacity: 1;
+    border-top-left-radius: 1%;
+    border-top-right-radius: 1%;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+  }
+
+  .step3 .card:hover{
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   }
 
   .step1::after{
@@ -813,7 +865,7 @@ nav ul li:nth-child(1){
         "second";
   
       justify-items: center;
-      row-gap: 50px;
+      
     }
 
     .step3 .projects-cards {
@@ -1040,6 +1092,10 @@ nav ul li:nth-child(1){
 
     .projects-context, .card{
       scale: .9;
+    }
+
+    .card:hover{
+      scale: 92%;
     }
 
     .step1 .projects-cards, .step2 .projects-cards, .step3 .projects-cards {
