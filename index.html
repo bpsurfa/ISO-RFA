@@ -360,15 +360,28 @@
         this.focus();
       }
 
-      const cards = document.querySelectorAll(".card");
+      const cardss = document.querySelectorAll(".card");
       const notices = document.querySelectorAll(".notice");
+
+      cardss.forEach((userItem) => {
+        userItem.addEventListener("mouseover", () => {
+          const item = userItem.children[0].children[0].children[1];
+          item.style.clipPath = "circle(100% at 50% 50%)"
+        })
+
+        userItem.addEventListener("mouseout", () => {
+          const item = userItem.children[0].children[0].children[1];
+          item.style.clipPath = "circle(35% at 50% 50%)"
+        })
+      });
 
       notices.forEach((userItem) => {
         userItem.addEventListener("click", () => {
-
           userItem.focus();
         })
       });
+
+    
 
     </script>
 </body>

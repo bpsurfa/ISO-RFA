@@ -485,7 +485,7 @@ nav ul li:nth-child(1){
    height: 180px;
   }
   
-  .card div div:nth-child(2):hover{
+  .card div div:nth-child(2):hover, .card div div:nth-child(2):focus{
     clip-path: circle(100% at 50% 50%);
   }
   
