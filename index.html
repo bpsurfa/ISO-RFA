@@ -363,15 +363,12 @@
       const cards = document.querySelectorAll(".card");
       const notices = document.querySelectorAll(".notice");
 
-      cards.forEach((userItem) => {
-        userItem.addEventListener("onclick", () => {
-          user.userItem.Opacity = 0;
-        })
-      });
-
       notices.forEach((userItem) => {
-        userItem.addEventListener("onclick", () => {
+        userItem.addEventListener("click", () => {
           userItem.style.Opacity = 1;
+          userItem.focus();
+          userItem.click();
+          console.log(userItem);
         })
       });
 
