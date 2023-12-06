@@ -365,15 +365,13 @@
 
       cards.forEach((userItem) => {
         userItem.addEventListener("onclick", () => {
-          userItem.focus();
-          userItem.click();
+          user.userItem.Opacity = 0;
         })
       });
 
       notices.forEach((userItem) => {
         userItem.addEventListener("onclick", () => {
-          userItem.focus();
-          userItem.click();
+          userItem.style.Opacity = 1;
         })
       });
 
