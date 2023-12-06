@@ -549,7 +549,7 @@ nav ul li:nth-child(1){
     color: rgb(122, 0, 0);
   }
 
-  .notice:hover{
+  .notice:hover, .notice:focus{
     opacity: 1;
     border-top-left-radius: 1%;
     border-top-right-radius: 1%;
