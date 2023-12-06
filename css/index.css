@@ -1055,6 +1055,10 @@ nav ul li:nth-child(1){
     .landing-context h3{
       font-size: 4.5vw !important;
     }
+
+    .notice span:first-child{
+      font-size: 5vw !important;
+    }
   }
 
   @media all and (max-width: 1280px) {
