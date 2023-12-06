@@ -355,6 +355,26 @@
           toTop.classList.remove("active");
         }
       })
+
+      function focuson(){
+        this.focus();
+      }
+
+      const cards = document.querySelectorAll(".card");
+      const notices = document.querySelectorAll(".notice");
+
+      cards.forEach((userItem) => {
+        userItem.addEventListener("onclick", () => {
+          userItem.focus();
+        })
+      });
+
+      notices.forEach((userItem) => {
+        userItem.addEventListener("onclick", () => {
+          userItem.focus();
+        })
+      });
+
     </script>
 </body>
 </html>
