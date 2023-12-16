@@ -1066,7 +1066,7 @@ nav ul li:nth-child(1){
     }
   }
 
-  @media all and (max-width: 1280px) {
+  @media all and (max-width: 1280px), screen and (max-height: 768px) {
     header{
       max-width: 100%;
       border-radius: 0;
