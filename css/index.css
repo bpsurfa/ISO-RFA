@@ -1067,6 +1067,34 @@ nav ul li:nth-child(1){
   }
 
   @media all and (max-width: 1280px), screen and (max-height: 768px) {
+    .step3 .projects-cards {
+      display: grid;
+  
+      grid-template-areas:
+        "first second"
+        "third third";
+  
+      justify-items: center;
+      row-gap: 6vh;
+    }
+  
+    .step3 .card:nth-child(1) {
+      grid-area: first;
+    }
+  
+    .step3 .card:nth-child(2) {
+      grid-area: second;
+    }
+  
+    .step3 .card:nth-child(3) {
+      grid-area: third;
+    }
+  
+    .step3 .footer-wrapper {
+      padding: 0% 0% 0% 0%;
+      left: 10%;
+    }
+    
     header{
       max-width: 100%;
       border-radius: 0;
@@ -1123,33 +1151,7 @@ nav ul li:nth-child(1){
   }
 
   @media all and (max-width: 1360px) {
-    .step3 .projects-cards {
-      display: grid;
-  
-      grid-template-areas:
-        "first second"
-        "third third";
-  
-      justify-items: center;
-      row-gap: 6vh;
-    }
-  
-    .step3 .card:nth-child(1) {
-      grid-area: first;
-    }
-  
-    .step3 .card:nth-child(2) {
-      grid-area: second;
-    }
-  
-    .step3 .card:nth-child(3) {
-      grid-area: third;
-    }
-  
-    .step3 .footer-wrapper {
-      padding: 0% 0% 0% 0%;
-      left: 10%;
-    }
+    
 
     .landing-context h1{
       font-size: 3rem;
