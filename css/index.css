@@ -752,6 +752,7 @@ nav ul li:nth-child(1){
     position: relative;
     margin-right: 25%;
     line-height: 1.5;
+    text-align: justify;
   }
   
   .about p::before {
@@ -916,7 +917,7 @@ nav ul li:nth-child(1){
     .footer-wrapper{
       flex-direction: column;
       padding: 10% 0 10% 0;
-
+     
     }
 
     .about{
@@ -926,6 +927,7 @@ nav ul li:nth-child(1){
     .about p{
       margin-left: 20%;
       margin-right: 20%;
+      text-align: center;
     }
 
     .contacts ul{
