@@ -1,6 +1,10 @@
 <h3 align="center"> As an intern in Quality Assurance Office, we were tasked to create an automation system for the Internal Audit of offices in all campuses of BPSU </h3>
-<h3> This project features automatic and scheduled pdf filling of details such as names, comments, and signatures from MS Forms filled by Auditors. The PDF file is then sent via email to the office it's auditing. This flow goes on for 3-step verification </h3>
-<h3> Visit RFA2024.NETLIFY.APP to see the website used to store and manage MS Forms links  </h3>
+
+
+<h5> This project features automatic and scheduled pdf filling of details such as names, comments, and signatures from MS Forms filled by Auditors. The PDF file is then sent via email to the office it's auditing. This flow goes on for 3-step verification </h3>
+
+<h5> Visit <a href="rfa2024.netlify.app" target="_blank">RFA2024.NETLIFY.APP</a> to see the website used to store and manage MS Forms links  </h3>
+
 
 <h3 align="center"> Here are the screenshots of how the files and emails looks </h3>
 
